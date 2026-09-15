@@ -1,10 +1,10 @@
 // let nome = "Diogo";
 // let idade = 30;
 
-//----------CONCATENAÇÃO----------
+//!----------CONCATENAÇÃO----------
 // console.log("Nome: " + nome + ", idade: " + idade);
 
-//----------INTERPOLAÇÃO----------
+//!----------INTERPOLAÇÃO----------
 // console.log(`Nome: ${nome}, idade: ${idade}`);
 
 // console.log(typeof nome);
@@ -20,7 +20,7 @@
 // console.log(typeof soma);
 // console.log(typeof sub);
 
-//---------- CONVERTENDO VALORES ----------
+//!---------- CONVERTENDO VALORES ----------
 // let numero = "53" //string
 
 // let convertido = Number(numero) //converte o valor para number
@@ -28,12 +28,12 @@
 // console.log(typeof convertido);
 
 
-//---------- OPERADORES RELACIONAIS ----------
+//!---------- OPERADORES RELACIONAIS ----------
 
-// valida igualdade de valor (somente valor)
+/// valida igualdade de valor (somente valor)
 // "10" == 10 -> true
 
-// valida igualdade de valor e tipo de dado 
+/// valida igualdade de valor e tipo de dado 
 // "10" === 10 -> false
 
 
@@ -51,7 +51,7 @@
 // }
 
 
-//---------- ESTRUTURA DE REPETIÇÃO ----------
+//!---------- ESTRUTURA DE REPETIÇÃO ----------
 // let frutas = ["Maçã", "Banana", "Acerola", "Uva"];
 
 // console.log(frutas);
@@ -63,10 +63,10 @@
 // frutas.forEach(fruta => console.log(`Fruta: ${fruta}`));
 
 
-//-------------------- FUNÇÕES NATIVAS JS --------------------
+//!-------------------- FUNÇÕES NATIVAS JS --------------------
 
-//---------- FUNÇÃO MAP() ----------
-// percorre uma lista e cria uma nova lista com base em uma condição
+//!---------- FUNÇÃO MAP() ----------
+/// percorre uma lista e cria uma nova lista com base em uma condição
 
 // let numeros = [1, 2, 3, 4]
 
@@ -77,14 +77,14 @@
 // numerosDobrados = [2, 4, 6, 8]
 // console.log(numerosDobrados);
 
-// ou assim:
-// Arrow function com retorno implícito
+/// ou assim:
+/// Arrow function com retorno implícito
 
 // let numerosDobradosArrow = numeros.map(num => num * 2);
 
 
-//---------- FILTER ----------
-// filtra os elementos com base em uma condição
+//!---------- FILTER ----------
+/// filtra os elementos com base em uma condição
 
 // let numeros = [5, 10, 15, 20];
 
@@ -93,30 +93,108 @@
 // maioresQueDez = [15, 20]
 // console.log(maioresQueDez);
 
-//---------- REDUCE ----------
-// Reduz os valores de um array para um único valor
+//!---------- REDUCE ----------
+/// Reduz os valores de um array para um único valor
 
 // let numeros = [1, 2, 3, 4]
 
-// acumulador inicia em 0
-// variavel auxiliar 
-// acumulador começa em 0 e soma com o auxiliar até o ultimo valor do array
+/// acumulador inicia em 0
+/// variavel auxiliar 
+/// acumulador começa em 0 e soma com o auxiliar até o ultimo valor do array
 
 // let soma = numeros.reduce((acumulador, auxiliar) => acumulador + auxiliar, 0);
 
 // console.log(soma);
 
 
-//---------- FIND ----------
-// Retorna o primeiro elemento que atende a condição
+//!---------- FIND ----------
+/// Retorna o primeiro elemento que atende a condição
 
 // let produtos = [
 //     { id: 1, nome: "Teclado", preco: 50}, // produto 1
 //     { id: 2, nome: "Mouse", preco: 30},
-//     { id: 3, nome: "Caderno", preco: 30} 
+//     { id: 2, nome: "Caderno", preco: 30} 
 // ]
 
-// let item = produtos.find(produto => produto.id === 3);
+// let item = produtos.find(produto => produto.id === 2);
 
 // console.log(item);
 
+///----- DIFERENÇA ENTRE FILTER E FIND -----
+/// find -> retorna somente o primeiro elemento que ele encontra com a condição
+/// filter -> retorna todos os elementos que encontra com a condição
+/// arrow function / função lambda
+// let itemFiltrado = produtos.filter(produto => produto.id === 2);
+
+// console.log(itemFiltrado);
+
+
+//!---------- SPLIT ----------
+/// Divide a string em partes, transformando em um array
+
+// let frase = "JS é top";
+
+// let palavras = frase.split(" ");
+// console.log(palavras);
+
+//!---------- TRIM ----------
+/// trim remove espaços no início e final de string
+// let nome = "      Paulo"
+// let nomeLimpo = nome.trim();
+
+// console.log(nome);
+// console.log(nomeLimpo);
+
+//!---------- INCLUDES ----------
+/// verifica se existe um valor dentro de uma lista e retorna um booleano
+/// verdadeiro ou falso
+
+// let frutas = ["maçã", "banana"];
+
+// let frutasIncludes = frutas.includes("maçã");
+// console.log(frutasIncludes); //true
+
+//! toLowerCase() -> transforma o texto em minúsculo
+//! toUpperCase() -> transforma o texto em maiúsculo
+// let nome = "KESSIA";
+// let cargo = "instrutora";
+
+// console.log(nome.toLowerCase()) // kessia
+// console.log(cargo.toUpperCase()) // INSTRUTORA
+
+//!---------- FOREACH ----------
+// let nomes = ["Guilherme", "João", "Maria"];
+
+// console.log(nomes);
+
+
+// nomes.forEach(nome => console.log(nome));
+
+//!---------- SOME ----------
+/// Verifica se pelo menos um item atende a condição
+/// Retorna booleano
+
+// let numeros = [1, 3, 5, 8];
+
+// let temPar = numeros.some(num => num % 2 === 0);
+// console.log(temPar); // true
+
+//!---------- EVERY ----------
+/// Verifica se TODOS os elementos atendem a condição 
+
+// let todosPares = numeros.every(num => num % 2 === 0);
+// console.log(todosPares); // false
+
+//!---------- SORT ----------
+/// ordena os elementos do array
+
+// let numeros = [3, 10, 5, 2, 4];
+// let letras = ["c", "a", "x", "h"]
+
+/// para letras
+// letras.sort();
+// console.log(letras);
+
+/// para números
+// numeros.sort((a, b) => a - b);
+// console.log(numeros);
